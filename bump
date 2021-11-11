@@ -38,7 +38,7 @@ __INITIAL__ = Version(0, 0, 0)
 def main(opts):
   v = None
   try:
-    with open("VERSION") as f:
+    with open("version.txt") as f:
       v = re.split(re.compile("\\.|-"), f.read()) or __INITIAL__
       v = Version(*map(int, v[0:3]))
 
@@ -61,7 +61,7 @@ def main(opts):
 
   print(v)
 
-  open("VERSION", 'w').write(str(v))
+  open("version.txt", 'w').write(str(v))
 
   sys.exit(0)
 
